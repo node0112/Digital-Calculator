@@ -1,6 +1,7 @@
 const numButtons=document.querySelectorAll('.number')
 const opButtons=document.querySelectorAll('.buttons')
 const dis=document.querySelector('.display-text')
+const headerLinks=document.querySelectorAll('a')
 let displayVal
 let val
 let num
@@ -9,6 +10,14 @@ var val1="",val2=""
 let op
 let ans
 
+headerLinks.forEach(link=>{
+    link.addEventListener('mouseover', ()=>{
+        link.style.textShadow=" 0 0 30px yellow"
+    })
+    link.addEventListener('mouseout', ()=>{
+        link.style.textShadow="none"
+    })
+})
 numButtons.forEach(button =>{
     button.addEventListener('click', ()=>{
        button.style="box-shadow: none;"
@@ -17,6 +26,9 @@ numButtons.forEach(button =>{
        val="num"
        if(clckcount==0){
            clckcount=1
+           val1=val1
+           val2=''
+           op=''
        }
        num=button.textContent
         if(clckcount==1){
@@ -81,9 +93,15 @@ function calculate(val1,val2,op){
        displayWrite(ans)
     }
     if(op=="÷"){
+        if(val2==0){
+            ans="error"
+            displayWrite(ans)
+        }
+        else{
       ans=val1/val2
       clckcount=0
        displayWrite(ans)
+    }
     }
 }
 
