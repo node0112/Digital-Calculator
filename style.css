@@ -98,10 +98,10 @@ ul{
 .button-container{
     margin-top: 30px;
     display: flex;
-    justify-content: space-between;
     flex: 1;
 }
 .number-buttons{
+    flex-shrink: 0;
    width: 70%;
    display: flex;
    flex-wrap: wrap;
@@ -119,7 +119,17 @@ ul{
     width: 60px;
     transition: all 0.5s;
 }
-
+.zero{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0;
+}
+.zero-button{
+    width: 30px;
+    height: 62%;
+    margin-bottom: 10px;
+}
 .operation-buttons{
     width: 15%;
     display: flex;
