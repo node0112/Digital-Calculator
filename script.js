@@ -18,14 +18,12 @@ numButtons.forEach(button =>{
        num=button.textContent
        displayWrite(num)
        if(clckcount==1){
-           val1=num
+           val1=parseInt(num)
        }
        if(clckcount==3){
-           val2=num
-       }
-       if(clckcount==5){
-        num=0
-        displayWrite(num)
+           val2=parseInt(num)
+           clckcount=4
+           calculate(val1,val2,op)
        }
     })
 })
@@ -62,17 +60,23 @@ function calculate(val1,val2,op){
     console.log(op)
     if(op=="+"){
        ans=val1+val2
+       clckcount=0
        displayWrite(ans)
-       console.log(ans)
     }
     if(op=="-"){
       ans=val1-val2
+      clckcount=0
+       displayWrite(ans)
     }
     if(op=="x"){
       ans=val1*val2
+      clckcount=0
+       displayWrite(ans)
     }
     if(op=="÷"){
       ans=val1/val2
+      clckcount=0
+       displayWrite(ans)
     }
 }
 

@@ -89,6 +89,7 @@ ul{
     border-radius: 10px;
 }
 .display-text{
+    transition: all 0.5s;
     font-size: 50px;
     text-shadow: 0 0 10px rgb(51, 51, 51);
     color: rgba(44, 44, 44, 0.856);
